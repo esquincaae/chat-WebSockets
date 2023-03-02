@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Websockets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="modal" class="modal-container">
+        <div class="modal">
+            <form class="login" id="login">
+                <label id="instruction" for="username">Introduce tu nombre de usuario</label>
+                <input autocomplete="off" type="text" id="username" class="username">
+                <button type="submit" class="send">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <header>
+        <h1 class="project-name"> Websockets</h1>
+    </header>
+    <main>
+        <!-- Container for available user list -->
+        <div class="chats-list" id="chats-list">
+
+            <span class="chats-list-title">
+                Conversaciones
+            </span>
+
+            <div class="chat" id="general">
+                <h1 class="chat-user">
+                    <span class="status active"></span>
+                    GRUPO 
+                </h1>
+                <span class="message-preview">
+                    Hola!
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Container for current ative chat -->
+        <div class="active-chat">
+            <div id="message-container" class="message-container">
+            </div>
+            <div class="message-controls" id="message-form">
+                <input id="text-input" autocomplete="off" type="text" class="text-input"
+                    placeholder="Type your message">
+                <input id="files" hidden type="file" class="attach" accept="image/png, image/jpeg">
+                <button id="file-btn" class="attach">Subir</button>
+                <input id="send" type="submit" class="send" value="Send">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span class="log" id="log"><strong>Event</strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Expedita,
+            velit maiores laudantium repudiandae nobis minus neque laborum optio enim voluptates quae, ducimus dolorem
+            quam culpa doloremque sed placeat. Deserunt, ex!</span>
+
+    </footer>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/client.js" type="module"></script>
+
+</html>
