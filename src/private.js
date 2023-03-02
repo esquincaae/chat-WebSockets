@@ -7,8 +7,8 @@ module.exports = (io) =>{
 
         //Al recibir un mensaje recojemos los datos
         socket.on('enviar mensaje', (datos) =>{
-            //console.log(datos);
             //Lo enviamos a todos los usuarios (clientes)
+
             io.sockets.emit('nuevo mensaje', {
                 msg: datos,
                 nick: socket.nickname
@@ -27,7 +27,12 @@ module.exports = (io) =>{
                 socket.nickname = datos;
                 nickNames.push(socket.nickname);
                 //Enviamos al cliente el array de usuarios:
-                actualizarUsuarios();
+                if (nickNames.length <= 2) {
+                    actualizarUsuarios();
+                }else{
+                    console.log("no permitido, limite de usuarios alcanzado")
+                }
+                
             }
         });
 

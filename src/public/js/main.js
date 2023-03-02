@@ -55,10 +55,11 @@ $(function(){
                 El usuario ya existe
                 </div>
                 `); 
+            }if(true) {
+
             }
             nickName.val('');
         });
-
     });
 
     //Obtenemos el array de usuarios de sockets.js
