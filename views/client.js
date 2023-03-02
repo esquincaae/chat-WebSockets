@@ -160,7 +160,12 @@ function changeRoom(element) {
 
 function enter(e) {
     e.preventDefault();
-    if (username.value.trim() === '' && !username.value) {
+        console.log(usuarios.username)
+        if(usuarios.username == username.value){
+            alert("el usuario ya a sido tomado")
+            return
+        }
+    if (username.value.trim() === '') {
         instruction.textContent = 'ingrese un nombre de usuario valido';
         return
     }
